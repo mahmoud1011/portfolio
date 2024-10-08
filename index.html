@@ -12,7 +12,7 @@
             font-family: 'Orbitron', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0d0d0d;
+            background-color: #0a0d1a;
             color: #e0e0e0;
         }
 
@@ -21,8 +21,9 @@
             background-color: #141414;
             color: #00ffff;
             text-align: center;
-            padding: 40px 0;
+            padding: 40px 20px;
             box-shadow: 0 0 15px #00ffff;
+            position: relative; /* Allows positioning of child elements */
         }
 
             header img {
@@ -45,61 +46,133 @@
                 margin: 0;
             }
 
-        /* Sci-Fi Section */
-        section {
-            padding: 40px;
-            max-width: 900px;
-            margin: 40px auto;
+        /* Tabs Section */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .tab-button {
+            padding: 15px 30px;
+            margin: 0 10px;
             background-color: #1a1a1a;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-        }
-
-        h2 {
             color: #00ffcc;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #00ffff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            cursor: pointer;
+            border: none;
+            border-bottom: 2px solid transparent;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
         }
 
-        p, li {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #e0e0e0;
-        }
+            /* Active tab button styling */
+            .tab-button.active {
+                border-bottom: 2px solid #00ffff;
+            }
 
+            /* Hover effect for tab buttons */
+            .tab-button:hover {
+                background-color: #262626; /* Darker background on hover */
+                color: #00ffff; /* Change text color on hover */
+                transform: scale(1.05); /* Slightly increase size */
+                box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3); /* Add shadow on hover */
+            }
+
+        /* Tab Content Styling */
+            .tab-content {
+                display: none;
+                padding: 20px;
+                background: linear-gradient(145deg, #1f1f1f, #2a2a2a); /* Gradient background */
+                max-width: 900px;
+                margin: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 30px rgba(0, 255, 255, 0.3); 
+                transition: background 0.3s ease; /* Smooth background transition */
+            }
+
+            /* Active tab content */
+            .tab-content.active {
+                display: block;
+            }
+
+        /* List styling */
         ul {
             list-style-type: none;
             padding-left: 0;
         }
 
-        li {
-            background-color: #262626;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-left: 4px solid #00ffff;
-            border-radius: 5px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #141414;
-            color: #00ffff;
-            box-shadow: 0 0 15px #00ffff;
-            position: relative;
-        }
-
-            footer p {
-                margin: 0;
-                font-size: 0.9rem;
+            /* List item styling */
+            li {
+                background-color: #262626;
+                margin-bottom: 15px; 
+                padding: 15px; 
+                border-left: 4px solid #00ffff;
+                border-radius: 8px; /* Rounded corners for list items */
+                transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for effects */
             }
 
+            /* Hover effect for list items */
+            li:hover {
+                transform: translateY(-2px); /* Slight lift effect */
+                box-shadow: 0 4px 15px rgba(0, 255, 255, 0.5); /* Box shadow on hover */
+            }
+
+            h3 {
+                color: #00ffff; /* Header color */
+                margin-bottom: 15px; /* Spacing below headers */
+            }
+
+        .skills-section {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+            .skills-section h2 {
+                text-align: center;
+                color: #00ffff;
+            }
+
+            .skills-section ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .skills-section li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                border-bottom: 1px solid #262626;
+            }
+
+            .skills-section li:last-child {
+                border-bottom: none; /* Remove bottom border from last item */
+            }
+
+            .rating {
+                display: flex;
+            }
+
+            .star {
+                font-size: 1.5rem;
+                color: #225252; /* Star color */
+                margin-left: 5px;
+            }
+
+            .star.filled {
+                color: #00ffcc; /* Filled star color */
+            }
+        
         /* Icons styling */
         .social-icons {
-            margin: 10px 0;
+            position: absolute; 
+            top: 320px;
+            right: 20px; 
+            display: flex; 
         }
 
             .social-icons a {
@@ -110,46 +183,120 @@
                 transition: color 0.3s ease;
             }
 
-                .social-icons a:hover {
-                    color: #00ffcc;
-                }
+            .social-icons a:hover {
+                color: #00ffcc;
+            }
+            
+        /* Industry Project Styling */
+        .industry-project {
+            background-color: #1a1a1a;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+            .industry-project h3 {
+                color: #00ffff;
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+            .industry-project p {
+                color: #00ffcc;
+                margin: 5px 0;
+                font-size: 1rem;
+            }
+            
+
+        .project-description {
+            margin-top: 10px;
+        }
+            .project-description h4 {
+                color: #00ffff;
+                margin-bottom: 10px;
+                font-size: 1.4rem;
+            }
+            .project-description li {
+                margin: 5px 0;
+                font-size: 1rem;
+                padding-left: 10px;
+                position: relative;
+                color: #ffffff;
+            }
+            .project-description li i {
+                color: #00ffff;
+                margin-right: 20px;
+                font-size: 1.2rem;
+                position: absolute;
+                left: 0;
+                top: 10;
+            }
+            .project-description ul {
+                list-style-type: disc;
+                padding-left: 20px;
+                color: #00ccff;
+            }
+        
+
+        /* Media for Video and Images */
+        .media-container {
+            margin-top: 20px;
+        }
+            .media-container h3 {
+                color: #00ffff;
+                margin-bottom: 10px;
+                font-size: 1.4rem;
+            }
+            .media-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                transition: display 0.2s, box-shadow 0.2s; /* Smooth transition for effects */
+            }
+
+            .media-grid video,
+            .media-grid img {
+                max-width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+                transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Add smooth hover transition */
+            }
+
+            .media-grid video:hover,
+            .media-grid img:hover {
+                transform: scale(1.05); /* Slight zoom effect */
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); /* Enhanced shadow on hover */
+                filter: brightness(1.1); /* Increase brightness slightly */
+            }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #141414;
+            color: #00ffff;
+            box-shadow: 0 0 15px #00ffff;
+        }
+            footer p {
+                margin: 0;
+                font-size: 0.9rem;
+            }
 
         /* Neon Glow Effect */
         header h1, footer p {
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            text-shadow: 0 0 10px #00d1d1, 0 0 20px #00e9e9, 0 0 30px #00ffff;
         }
 
-        /* Add Orbitron font for futuristic style */
+        /* Orbitron font for futuristic style */
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
     </style>
 </head>
+
+
 <body>
 
     <header>
         <img src="ProfilePicture.jpg" alt="Mahmoud Anwar">
         <h1>Mahmoud Anwar</h1>
-        <p>Game Programmer | 3 Years Experience</p>
-    </header>
-
-    <section>
-        <h2>About Me</h2>
-        <p>
-            Hello! I’m Mahmoud Anwar, a game programmer with a passion for creating immersive and engaging gaming experiences.
-            I specialize in designing and implementing game mechanics, user interfaces, and gameplay systems using programming languages like C++, C#, and JavaScript.
-            I'm always pushing the boundaries of gaming and love creating cool, unique mechanics for players to enjoy.
-        </p>
-
-        <h2>Projects</h2>
-        <p>Here are a few projects I’ve worked on:</p>
-        <ul>
-            <li><strong>Project 1:</strong> Description of the first project</li>
-            <li><strong>Project 2:</strong> Description of the second project</li>
-            <li><strong>Project 3:</strong> Description of the third project</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>Contact: mahmoudanwar75888@gmail.com | © 2024 Mahmoud Anwar</p>
+        <p>Game Developer | Game Programmer</p>
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/mahmoud-anwar10/" target="_blank" title="LinkedIn">
                 <i class="fab fa-linkedin"></i>
@@ -157,8 +304,256 @@
             <a href="https://anwar10.itch.io" target="_blank" title="Itch.io">
                 <i class="fab fa-itch-io"></i>
             </a>
+            <a href="https://github.com/mahmoud1011" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
         </div>
+    </header>
+
+    <!-- Tabs for About Me and Project Sections -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'about')">About Me</button>
+        <button class="tab-button" onclick="openTab(event, 'industry')">Industry Projects</button>
+        <button class="tab-button" onclick="openTab(event, 'personal')">Personal Projects</button>
+        <button class="tab-button" onclick="openTab(event, 'school')">School Projects</button>
+    </div>
+
+    <!-- About Me Section -->
+    <div id="about" class="tab-content active">
+        <p>
+            I am Mahmoud Anwar, a passionate Game Programmer with over 3 years of experience in designing and developing interactive game mechanics. My expertise lies in creating seamless, high-performance gameplay systems with a focus on player experience. Having worked on various industry projects, personal endeavors, and school-based game development assignments, I have honed my skills in Unity, C#, AI, and combat system implementation. My journey as a game developer is driven by my love for crafting immersive worlds and intricate game logic, aiming to deliver cutting-edge, fun gameplay experiences.
+        </p>
+
+        <div class="skills-section">
+            <h2>Skills</h2>
+            <ul>
+                <li>
+                    <strong>C#</strong>
+                    <div class="rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>C++</strong>
+                    <div class="rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>JavaScript</strong>
+                    <div class="rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Python</strong>
+                    <div class="rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>GitHub</strong>
+                    <div class="rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Unity</strong>
+                    <div class="rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Unreal Engine</strong>
+                    <div class="rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Industry Projects -->
+    <div id="industry" class="tab-content">
+        <div class="industry-project">
+            <h3>Torum Technology Sdn. Bhd.</h3>
+            <p><strong>Role:</strong> Unity Developer</p>
+            <p><strong>Duration:</strong> Oct 2023 - May 2024</p>
+            <p><strong>Source:</strong> <a href="https://intro.torum.com" target="_blank">Official Game Page</a></p> 
+            <div class="project-description">
+                <h4>Description:</h4>
+                <ul>
+                    <li>Developed and launched a workflow to automate app development, creating a prototype AR face tracking application.</li>
+                    <li>Implemented Asset Bundles and integrated CDN (S3) in Unity for efficient asset management.</li>
+                    <li>Developed AR applications for Android and iOS, including iOS native integration.</li>
+                    <li>Created Python automation plugins for Blender to compose 3D NFTs.</li>
+                </ul>
+            </div>
+
+            <!-- Media Showcase for Project 1 -->
+            <div class="media-container">
+                <h3>Media Showcase</h3>
+                <div class="media-grid">
+                    <video controls>
+                        <source src="Resources/IndustryProjects/Torum/Torum_IOS.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                    <img src="Resources/IndustryProjects/Torum/IMG_6991.jpg" alt="MeeBits #991">
+                    <img src="Resources/IndustryProjects/Torum/IMG_12857.jpg" alt="MeeBits #12857">
+                    <img src="Resources/IndustryProjects/Torum/EarlyPrototype.jpg" alt="Early Prototype">
+                </div>
+            </div>
+        </div>
+
+        <div class="industry-project">
+            <h3>Rickshaw Surfer</h3> <!-- The Wider Collective -->
+            <p><strong>Role:</strong> Unity Developer</p>
+            <p><strong>Duration:</strong> Dec 2023 - Mar 2024</p>
+            <p><strong>Source:</strong> <a href="https://thewidercollective.com" target="_blank">Official Game Page</a></p> 
+            <div class="project-description">
+                <h4>Description:</h4>
+                <ul>
+                    <li>"Rickshaw Surfer" is an endless runner game set in the vibrant city of Dhaka, Bangladesh. Players control a rickshaw driver, dashing through bustling streets and markets, dodging obstacles, and collecting items, all while soaking up the local culture.</li>
+                    <li>Developed and implemented an API to connect with the client's server, enabling real-time feedback on user playtime duration.</li>
+                    <li>Integrated the Firebase SDK to facilitate Google Play Services leaderboard functionality, enhancing competitive gameplay and user engagement.</li>
+                </ul>
+            </div>
+
+            <!-- Media Showcase for Project 2 -->
+            <div class="media-container">
+                <h3>Media Showcase</h3>
+                <div class="media-grid">
+                    <video controls>
+                        <source src="Resources/IndustryProjects/RickshawSurfer/MainMenu.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <video controls>
+                        <source src="Resources/IndustryProjects/RickshawSurfer/InGame_01.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <img src="Resources/IndustryProjects/RickshawSurfer/InGame_01.jpg" alt="In-GamePlay">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Personal Projects -->
+    <div id="personal" class="tab-content">
+        <ul>
+        <div class="industry-project">
+            <h3>Personal Project 1:</h3>
+            <p>Description of the first personal project.</p>
+        </div>
+
+        <div class="industry-project">
+            <h3>Personal Project 2:</h3>
+            <p>Description of the second personal project.</p>
+        </div>
+        </ul>
+    </div>
+
+    <!-- School Projects -->
+    <div id="school" class="tab-content">
+        <ul>
+            <div class="industry-project">
+                <h3>GHOOL</h3>
+                <p><strong>Role:</strong> AI Programmer</p>
+                <p><strong>Duration:</strong> Jan 2023 - May 2023</p>
+                <p><strong>Source:</strong> <a href="https://uowmgames.itch.io/ghool" target="_blank">Official Game Page</a></p> 
+                <div class="project-description">
+                    <h4>Description:</h4>
+                    <ul>
+                        <li>Designed and implemented a dynamic enemy spawn system that adjusts enemy count, types, and spawn locations based on player progress and difficulty scaling.</li>
+                        <li>Developed AI behavior for regular enemies (minions) using a finite state machine (FSM) approach, enabling them to patrol, chase, and attack based on the player's proximity and actions.</li>
+                        <li>Integrated a behavior tree framework to manage complex decision-making for bosses, allowing for more sophisticated and adaptive behaviors, such as phase-based combat, special attacks, and environmental interactions.</li>
+                        <li>Created custom tasks and nodes within the behavior tree to fine-tune individual enemy behavior, such as attack patterns, defensive strategies, and coordination with other enemies during encounters.</li>
+                    </ul>
+                </div>
+    
+                <!-- Media Showcase for Project 2 -->
+                <div class="media-container">
+                    <h3>Media Showcase</h3>
+                    <div class="media-grid">
+                        <video controls>
+                            <source src="Resources/SchoolProjects/GHOOL/GhoolTrailer.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="Resources/SchoolProjects/GHOOL/MainMenu.jpg" alt="Game MainMenu">
+                        <img src="Resources/SchoolProjects/GHOOL/InGame_01.jpg" alt="In-GamePlay_01">
+                        <img src="Resources/SchoolProjects/GHOOL/InGame_02.jpg" alt="In-GamePlay_02">
+                        <img src="Resources/SchoolProjects/GHOOL/InGame_03.jpg" alt="In-GamePlay_03">
+                        <img src="Resources/SchoolProjects/GHOOL/Credits.jpg" alt="Game Credits">
+                    </div>
+                </div>
+            </div>
+
+            <div class="industry-project">
+                <h3>School Project 2:</h3>
+                <p>Description of the second school project.</p>
+            </div>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Contact: mahmoudanwar75888@gmail.com | © 2024 Mahmoud Anwar</p>
     </footer>
 
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            
+            // Remove "active" class from all buttons
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            
+            // Show the current tab, and add "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Ensure that the active tab is displayed
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.tab-content.active').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
