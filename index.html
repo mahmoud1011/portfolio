@@ -38,7 +38,10 @@
 
         /* Sci-Fi Header */
         header {
-            background-color: #141414;
+            background-color: #141414; /* Fallback color in case the image doesn't load */
+            background-image: url('Header_BG2.jpg'); /* Replace with the path to your image*/
+            background-size: cover; /* Ensure the image covers the entire header */
+            background-position-y: -650px; /* Center the image */
             color: #00ffff;
             text-align: center;
             padding: 40px 20px;
@@ -315,6 +318,32 @@
 <body>
     <canvas id="matrixCanvas"></canvas>
     <script src="matrix.js"></script>
+    
+    <!-- Include particles.js -->
+    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <div id="particles-js"></div> -->
+
+    <!-- JavaScript for particles.js -->
+    <!-- <script>
+    particlesJS("particles-js", {
+    "particles": {
+        "number": {
+        "value": 100,
+        "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": "#00ffff" },
+        "shape": {
+        "type": "circle",
+        "stroke": { "width": 0, "color": "#000000" }
+        },
+        "opacity": { "value": 0.5, "random": false },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#00ffff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+    }
+    });
+    </script> -->
 
     <header>
         <img src="ProfilePicture.JPG" alt="Mahmoud Anwar">
