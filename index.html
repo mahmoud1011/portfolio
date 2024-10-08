@@ -7,13 +7,33 @@
     <title>Mahmoud Anwar | Game Programmer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        
         /* Global Styling */
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0a0d1a;
+            background-color: #04050f;
             color: #e0e0e0;
+        }
+        
+        canvas {
+            display: block;
+            position: fixed; /* This makes the canvas stay in place while scrolling */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensures it's behind the content */
+            pointer-events: none; /* Prevents the canvas from capturing any mouse events */
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
         }
 
         /* Sci-Fi Header */
@@ -50,6 +70,7 @@
         .tabs {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; 
             margin: 40px 0;
         }
 
@@ -282,7 +303,7 @@
 
         /* Neon Glow Effect */
         header h1, footer p {
-            text-shadow: 0 0 10px #00d1d1, 0 0 20px #00e9e9, 0 0 30px #00ffff;
+            text-shadow: 0 0 10px #adadad, 0 0 20px #7aaaaa, 0 0 30px #085353;
         }
 
         /* Orbitron font for futuristic style */
@@ -292,6 +313,8 @@
 
 
 <body>
+    <canvas id="matrixCanvas"></canvas>
+    <script src="matrix.js"></script>
 
     <header>
         <img src="ProfilePicture.jpg" alt="Mahmoud Anwar">
@@ -467,7 +490,6 @@
         </div>
     </div>
 
-
     <!-- Personal Projects -->
     <div id="personal" class="tab-content">
         <ul>
@@ -519,8 +541,33 @@
             </div>
 
             <div class="industry-project">
-                <h3>School Project 2:</h3>
-                <p>Description of the second school project.</p>
+                <h3>Immortal Drift Kings</h3>
+                <p><strong>Role:</strong>Game Director | Lead Programmer | Generalist</p>
+                <p><strong>Duration:</strong> June 2023 - Sep 2023</p>
+                <p><strong>Source:</strong> <a href="https://uowmgames.itch.io/immortal-drift-kings" target="_blank">Official Game Page</a></p> 
+                <div class="project-description">
+                    <h4>Description:</h4>
+                    <ul>
+                        <li>Led the programming team, overseeing the entire game logic and mechanics implementation while ensuring smooth project execution.</li>
+                        <li>Managed task distribution among programmers, reviewed code, and provided technical assistance to ensure quality and consistency across all gameplay features.</li>
+                        <li>Developed and integrated advanced AI behavior, including machine learning techniques, to enhance the performance and competitiveness of AI-controlled racing opponents.</li>
+                        <li>Collaborated with designers and artists to create an immersive racing experience, ensuring that gameplay mechanics aligned with the overall vision of the project.</li>
+                    </ul>
+                </div>
+    
+                <!-- Media Showcase for Project 2 -->
+                <div class="media-container">
+                    <h3>Media Showcase</h3>
+                    <div class="media-grid">
+                        <video controls>
+                            <source src="Resources/SchoolProjects/ImmortalDriftKings/videoplayback.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="Resources/SchoolProjects/ImmortalDriftKings/MainMenu.jpg" alt="Game MainMenu">
+                        <img src="Resources/SchoolProjects/ImmortalDriftKings/Store.jpg" alt="In-GamePlay_01">
+                        <img src="Resources/SchoolProjects/GHOOL/Credits.jpg" alt="Game Credits">
+                    </div>
+                </div>
             </div>
         </ul>
     </div>
