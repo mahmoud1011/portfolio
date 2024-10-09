@@ -222,7 +222,7 @@
             .industry-project h3 {
                 color: #00ffff;
                 font-size: 1.6rem;
-                margin-bottom: 10px;
+                margin: 0;
             }
             .industry-project p {
                 color: #00ffcc;
@@ -230,10 +230,23 @@
                 font-size: 1rem;
             }
             
-
-        .project-description {
-            margin-top: 10px;
-        }
+            .project-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            .project-icon {
+                width: 120px; /* Size for box shape */
+                height: 120px; /* Square box shape */
+                margin-left: 15px;
+                border-radius: 5px; /* Box shape with subtle rounded corners */
+                border: 2px solid #00ffff; /* Optional border to match theme */
+                margin-bottom: -80px;
+            }
+            .project-description {
+                margin-top: 10px;
+            }
             .project-description h4 {
                 color: #00ffff;
                 margin-bottom: 10px;
@@ -243,7 +256,6 @@
                 margin: 5px 0;
                 font-size: 1rem;
                 padding-left: 10px;
-                position: relative;
                 color: #ffffff;
             }
             .project-description li i {
@@ -456,10 +468,13 @@
     <!-- Industry Projects -->
     <div id="industry" class="tab-content">
         <div class="industry-project">
-            <h3>Torum Technology Sdn. Bhd.</h3>
+            <div class="project-header">
+                <h3>Torum Technology Sdn. Bhd.</h3>
+                <img src="Resources/IndustryProjects/Torum/TorumLogo.jpg" alt="Torum Icon" class="project-icon">
+            </div>
             <p><strong>Role:</strong> Unity Developer</p>
             <p><strong>Duration:</strong> Oct 2023 - May 2024</p>
-            <p><strong>Source:</strong> <a href="https://intro.torum.com" target="_blank">Official Game Page</a></p> 
+            <p><strong>Source:</strong> <a href="https://intro.torum.com" target="_blank">Official Game Page</a></p>
             <div class="project-description">
                 <h4>Description:</h4>
                 <ul>
@@ -469,8 +484,7 @@
                     <li>Created Python automation plugins for Blender to compose 3D NFTs.</li>
                 </ul>
             </div>
-
-            <!-- Media Showcase for Project 1 -->
+            <!-- Media Showcase -->
             <div class="media-container">
                 <h3>Media Showcase</h3>
                 <div class="media-grid">
@@ -486,10 +500,13 @@
         </div>
 
         <div class="industry-project">
-            <h3>Rickshaw Surfer</h3> <!-- The Wider Collective -->
+            <div class="project-header">
+                <h3>Rickshaw Surfer</h3>
+                <img src="Resources/IndustryProjects/RickshawSurfer/RickshawSurferLogo.jpg" alt="Rickshaw Surfer Icon" class="project-icon">
+            </div>
             <p><strong>Role:</strong> Unity Developer</p>
             <p><strong>Duration:</strong> Dec 2023 - Mar 2024</p>
-            <p><strong>Source:</strong> <a href="https://thewidercollective.com" target="_blank">Official Game Page</a></p> 
+            <p><strong>Source:</strong> <a href="https://thewidercollective.com" target="_blank">Official Game Page</a></p>
             <div class="project-description">
                 <h4>Description:</h4>
                 <ul>
@@ -498,8 +515,7 @@
                     <li>Integrated the Firebase SDK to facilitate Google Play Services leaderboard functionality, enhancing competitive gameplay and user engagement.</li>
                 </ul>
             </div>
-
-            <!-- Media Showcase for Project 2 -->
+            <!-- Media Showcase -->
             <div class="media-container">
                 <h3>Media Showcase</h3>
                 <div class="media-grid">
@@ -507,12 +523,10 @@
                         <source src="Resources/IndustryProjects/RickshawSurfer/MainMenu.webm" type="video/webm">
                         Your browser does not support the video tag.
                     </video>
-
                     <video controls>
                         <source src="Resources/IndustryProjects/RickshawSurfer/InGame_01.webm" type="video/webm">
                         Your browser does not support the video tag.
                     </video>
-
                     <img src="Resources/IndustryProjects/RickshawSurfer/InGame_01.jpg" alt="In-GamePlay">
                 </div>
             </div>
@@ -536,9 +550,44 @@
 
     <!-- School Projects -->
     <div id="school" class="tab-content">
-        <ul>
+        <div class="industry-project">
+            <div class="project-header">
+                    <h3>Immortal Drift Kings</h3>
+                    <img src="Resources/SchoolProjects/ImmortalDriftKings/ImmortalDriftKingsLogo.jpg" alt="Immortal Drift Kings Icon" class="project-icon">
+                </div>
+                <p><strong>Role:</strong>Game Director | Lead Programmer | Generalist</p>
+                <p><strong>Duration:</strong> June 2023 - Sep 2023</p>
+                <p><strong>Source:</strong> <a href="https://uowmgames.itch.io/immortal-drift-kings" target="_blank">Official Game Page</a></p> 
+                <div class="project-description">
+                    <h4>Description:</h4>
+                    <ul>
+                        <li>Led the programming team, overseeing the entire game logic and mechanics implementation while ensuring smooth project execution.</li>
+                        <li>Managed task distribution among programmers, reviewed code, and provided technical assistance to ensure quality and consistency across all gameplay features.</li>
+                        <li>Developed and integrated advanced AI behavior, including machine learning techniques, to enhance the performance and competitiveness of AI-controlled racing opponents.</li>
+                        <li>Collaborated with designers and artists to create an immersive racing experience, ensuring that gameplay mechanics aligned with the overall vision of the project.</li>
+                    </ul>
+                </div>
+    
+                <!-- Media Showcase for Project 2 -->
+                <div class="media-container">
+                    <h3>Media Showcase</h3>
+                    <div class="media-grid">
+                        <video controls>
+                            <source src="Resources/SchoolProjects/ImmortalDriftKings/videoplayback.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="Resources/SchoolProjects/ImmortalDriftKings/MainMenu.jpg" alt="Game MainMenu">
+                        <img src="Resources/SchoolProjects/ImmortalDriftKings/Store.jpg" alt="In-GamePlay_01">
+                        <img src="Resources/SchoolProjects/ImmortalDriftKings/Credits.jpg" alt="Game Credits">
+                    </div>
+                </div>
+            </div>
+
             <div class="industry-project">
-                <h3>GHOOL</h3>
+                <div class="project-header">
+                    <h3>GHOOL</h3>
+                    <img src="Resources/SchoolProjects/GHOOL/GHOOLLogo.jpg" alt="GHOOL Icon" class="project-icon">
+                </div>
                 <p><strong>Role:</strong> AI Programmer</p>
                 <p><strong>Duration:</strong> Jan 2023 - May 2023</p>
                 <p><strong>Source:</strong> <a href="https://uowmgames.itch.io/ghool" target="_blank">Official Game Page</a></p> 
@@ -568,37 +617,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="industry-project">
-                <h3>Immortal Drift Kings</h3>
-                <p><strong>Role:</strong>Game Director | Lead Programmer | Generalist</p>
-                <p><strong>Duration:</strong> June 2023 - Sep 2023</p>
-                <p><strong>Source:</strong> <a href="https://uowmgames.itch.io/immortal-drift-kings" target="_blank">Official Game Page</a></p> 
-                <div class="project-description">
-                    <h4>Description:</h4>
-                    <ul>
-                        <li>Led the programming team, overseeing the entire game logic and mechanics implementation while ensuring smooth project execution.</li>
-                        <li>Managed task distribution among programmers, reviewed code, and provided technical assistance to ensure quality and consistency across all gameplay features.</li>
-                        <li>Developed and integrated advanced AI behavior, including machine learning techniques, to enhance the performance and competitiveness of AI-controlled racing opponents.</li>
-                        <li>Collaborated with designers and artists to create an immersive racing experience, ensuring that gameplay mechanics aligned with the overall vision of the project.</li>
-                    </ul>
-                </div>
-    
-                <!-- Media Showcase for Project 2 -->
-                <div class="media-container">
-                    <h3>Media Showcase</h3>
-                    <div class="media-grid">
-                        <video controls>
-                            <source src="Resources/SchoolProjects/ImmortalDriftKings/videoplayback.webm" type="video/webm">
-                            Your browser does not support the video tag.
-                        </video>
-                        <img src="Resources/SchoolProjects/ImmortalDriftKings/MainMenu.jpg" alt="Game MainMenu">
-                        <img src="Resources/SchoolProjects/ImmortalDriftKings/Store.jpg" alt="In-GamePlay_01">
-                        <img src="Resources/SchoolProjects/GHOOL/Credits.jpg" alt="Game Credits">
-                    </div>
-                </div>
-            </div>
-        </ul>
     </div>
 
     <footer>
