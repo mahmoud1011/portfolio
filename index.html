@@ -271,8 +271,21 @@
                 padding-left: 20px;
                 color: #00ccff;
             }
-        
 
+        /* Fullscreen effect for iOS images */
+        .fullscreen-ios {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+        }
+        
         /* Media for Video and Images */
         .media-container {
             margin-top: 20px;
@@ -294,6 +307,7 @@
                 max-width: 100%;
                 border-radius: 10px;
                 box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+                cursor: pointer; /* Add pointer to indicate clickability */
                 transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Add smooth hover transition */
             }
 
@@ -678,20 +692,33 @@
 
     <!-- Tabs Script -->
     <script>
-        function openFullscreen(element) 
-        {
-            if (element.requestFullscreen) 
-            {
-                element.requestFullscreen();
-            } 
-            else if (element.webkitRequestFullscreen) /* Safari */
-            {
-                 element.webkitRequestFullscreen();
-            } else if (element.msRequestFullscreen) /* IE11 */
-            { 
-                element.msRequestFullscreen();
+       function openFullscreen(element) {
+            // For mobile devices, check if iOS (Safari does not support Fullscreen API for images)
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+            if (!isIOS) {
+                // For non-iOS devices, use Fullscreen API
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.webkitRequestFullscreen) { /* Safari */
+                    element.webkitRequestFullscreen();
+                } else if (element.msRequestFullscreen) { /* IE11 */
+                    element.msRequestFullscreen();
+                } else if (element.mozRequestFullScreen) { /* Firefox */
+                    element.mozRequestFullScreen();
+                }
+            } else {
+                // Fallback for iOS (no fullscreen support for images)
+                if (element.tagName === 'VIDEO') {
+                    // iOS has built-in video fullscreen when playing
+                    element.play();
+                } else if (element.tagName === 'IMG') {
+                    // For images, create a CSS fallback for iOS devices
+                    element.classList.toggle('fullscreen-ios');
+                }
             }
         }
+
 
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
