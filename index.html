@@ -36,18 +36,18 @@
             line-height: 1.6;
         }
 
-        /* Sci-Fi Header */
-        header {
-            background-color: #141414; /* Fallback color in case the image doesn't load */
-            background-image: url('Resources/Header_BG2.jpg'); /* Replace with the path to your image*/
-            background-size: cover; /* Ensure the image covers the entire header */
-            background-position-y: -650px; /* Center the image */
-            color: #00ffff;
-            text-align: center;
-            padding: 40px 20px;
-            box-shadow: 0 0 15px #00ffff;
-            position: relative; /* Allows positioning of child elements */
-        }
+            header {
+                background-color: #141414; /* Fallback color */
+                background-image: url('Resources/Header_BG2.jpg');
+                background-size: cover;            /* Make sure image covers area */
+                background-position: center center;/* Always center horizontally and vertically */
+                background-repeat: no-repeat;
+                color: #00ffff;
+                text-align: center;
+                padding: 60px 20px;                /* More padding gives better spacing */
+                box-shadow: 0 0 15px #00ffff;
+                position: relative;
+            }
 
             header img {
                 width: 150px;
